@@ -1,0 +1,490 @@
+{
+  "dhikr_list": [
+    {
+      "name": "SubhanAllah",
+      "arabic": "سُبْحَانَ اللَّهِ",
+      "meaning": "Glory be to Allah",
+      "type": "Tasbih",
+      "count": 33,
+      "reason": "Recited 33 times after each of the five daily prayers, based on a hadith of the Prophet (PBUH).",
+      "reference": "Sahih Muslim 595"
+    },
+    {
+      "name": "Alhamdulillah",
+      "arabic": "اَلْـحَمْدُ لِلَّٰهِ",
+      "meaning": "All praise is due to Allah",
+      "type": "Tahmid",
+      "count": 33,
+      "reason": "Recited 33 times after each of the five daily prayers, in the same hadith where SubhanAllah is mentioned.",
+      "reference": "Sahih Muslim 595"
+    },
+    {
+      "name": "Allahu Akbar",
+      "arabic": "اَللّٰهُ أَكْبَرُ",
+      "meaning": "Allah is the Greatest",
+      "type": "Takbir",
+      "count": 34,
+      "reason": "Recited 34 times after prayers, completing the cycle of dhikr as recommended in the hadith.",
+      "reference": "Sahih Muslim 595"
+    },
+    {
+      "name": "La ilaha illallah",
+      "arabic": "لَا إِلٰهَ إِلَّا اللَّهُ",
+      "meaning": "There is no deity worthy of worship except Allah",
+      "type": "Tahlil",
+      "count": 100,
+      "reason": "The Prophet (PBUH) recommended saying this dhikr 100 times a day for immense reward and forgiveness of sins.",
+      "reference": "Sahih Al-Bukhari 6403, Sahih Muslim 2691"
+    },
+    {
+      "name": "Astaghfirullah",
+      "arabic": "أَسْتَغْفِرُ اللَّهَ",
+      "meaning": "I seek forgiveness from Allah",
+      "type": "Istighfar",
+      "count": 100,
+      "reason": "The Prophet (PBUH) would seek forgiveness 100 times a day, setting an example for Muslims.",
+      "reference": "Sahih Muslim 2702"
+    },
+    {
+      "name": "La hawla wa la quwwata illa billah",
+      "arabic": "لَا حول ولا قوة إلا بالله",
+      "meaning": "There is no power and no strength except with Allah",
+      "type": "Hawqala",
+      "count": 100,
+      "reason": "Reciting this frequently brings peace and relief, as it acknowledges Allah’s control over all affairs.",
+      "reference": "Sahih Al-Bukhari 6952, Sahih Muslim 2704"
+    },
+    {
+      "name": "SubhanAllah wa bihamdihi",
+      "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+      "meaning": "Glory be to Allah and all praise is due to Him",
+      "type": "Tasbih with Praise",
+      "count": 100,
+      "reason": "The Prophet (PBUH) said whoever says this 100 times in a day will have their sins forgiven, even if they are like the foam of the sea.",
+      "reference": "Sahih Al-Bukhari 6405, Sahih Muslim 2691"
+    },
+    {
+      "name": "SubhanAllahi wa bihamdihi, SubhanAllahi al-Azim",
+      "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+      "meaning": "Glory be to Allah and all praise is due to Him; Glory be to Allah, the Greatest",
+      "type": "Tasbih and Takbir Combined",
+      "count": 100,
+      "reason": "This dhikr combines two forms of glorification and brings great rewards, often recited 100 times for extra blessings.",
+      "reference": "Sahih Al-Bukhari 6682, Sahih Muslim 2694"
+    },
+    {
+      "name": "Hasbunallahu wa ni’mal wakeel",
+      "arabic": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+      "meaning": "Allah is sufficient for us, and He is the best disposer of affairs",
+      "type": "Tawakkul",
+      "count": 7,
+      "reason": "Traditionally recited 7 times in times of distress or difficulty to express complete reliance on Allah.",
+      "reference": "Sunan Abi Dawood 3627"
+    },
+    {
+      "name": "La ilaha illa anta subhanaka inni kuntu minaz-zalimeen",
+      "arabic": "لَا إِلٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+      "meaning": "There is no deity except You; Glory be to You, indeed I have been of the wrongdoers",
+      "type": "Dua of Yunus (AS)",
+      "count": 100,
+      "reason": "Reciting this frequently is a powerful way to seek Allah's mercy and forgiveness.",
+      "reference": "Sunan At-Tirmidhi 3505"
+    }
+  ],
+  "dua_list": [
+    {
+      "name": "Dua for Guidance",
+      "arabic": "اللَّهُمَّ اهْدِنَا فِيمَنْ هَدَيْتَ",
+      "transliteration": "Allahumma ihdina feeman hadait",
+      "meaning": "O Allah, guide us among those You have guided.",
+      "reference": "Sunan At-Tirmidhi 464"
+    },
+    {
+      "name": "Dua for Forgiveness",
+      "arabic": "رَبِّ اغْفِرْ لِي وَارْحَمْنِي",
+      "transliteration": "Rabbi ighfir li warhamni",
+      "meaning": "My Lord, forgive me and have mercy on me.",
+      "reference": "Sahih Muslim 2697"
+    },
+    {
+      "name": "Dua for Patience",
+      "arabic": "رَبِّ اشْرَحْ لِي صَدْرِي",
+      "transliteration": "Rabbi ishrah li sadri",
+      "meaning": "O my Lord, expand for me my chest (with assurance).",
+      "reference": "Surah Ta-Ha 20:25"
+    },
+    {
+      "name": "Dua for Seeking Knowledge",
+      "arabic": "رَبِّ زِدْنِي عِلْمًا",
+      "transliteration": "Rabbi zidni ilma",
+      "meaning": "My Lord, increase me in knowledge.",
+      "reference": "Surah Ta-Ha 20:114"
+    },
+    {
+      "name": "Dua for Strength",
+      "arabic": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+      "transliteration": "Hasbunallahu wa ni'mal wakeel",
+      "meaning": "Allah is sufficient for us, and He is the best disposer of affairs.",
+      "reference": "Surah Al-Imran 3:173"
+    },
+    {
+      "name": "Dua for Protection",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ",
+      "transliteration": "Allahumma inni a'udhu bika min sharri ma sanat",
+      "meaning": "O Allah, I seek refuge in You from the evil of what I have done.",
+      "reference": "Sahih Muslim 2716"
+    },
+    {
+      "name": "Dua for Peace",
+      "arabic": "اللّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ",
+      "transliteration": "Allahumma anta as-salam wa minka as-salam",
+      "meaning": "O Allah, You are Peace and from You comes Peace.",
+      "reference": "Sahih Muslim 591"
+    },
+    {
+      "name": "Dua for Well-being",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ",
+      "transliteration": "Allahumma inni asaluka al-afiyah",
+      "meaning": "O Allah, I ask You for well-being.",
+      "reference": "Sunan At-Tirmidhi 3514"
+    },
+    {
+      "name": "Dua for Steadfastness",
+      "arabic": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+      "transliteration": "Ya muqallibal quloob thabbit qalbi 'ala deenik",
+      "meaning": "O Turner of the hearts, make my heart firm upon Your religion.",
+      "reference": "Sunan At-Tirmidhi 3522"
+    },
+    {
+      "name": "Dua for Protection from Harm",
+      "arabic": "بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ",
+      "transliteration": "Bismillahilladhi la yadurru ma'a ismihi shay'un fil ard",
+      "meaning": "In the name of Allah, with whose name nothing in the earth can harm.",
+      "reference": "Sunan Abu Dawood 5088"
+    },
+    {
+      "name": "Dua for Parents",
+      "arabic": "رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+      "transliteration": "Rabbi irhamhuma kama rabbayani sagheera",
+      "meaning": "My Lord, have mercy upon them as they brought me up when I was small.",
+      "reference": "Surah Al-Isra 17:24"
+    },
+    {
+      "name": "Dua for Forgiveness of Sins",
+      "arabic": "رَبِّ اغْفِرْ لِي خَطِيئَتِي وَجَهْلِي",
+      "transliteration": "Rabbi ighfir li khati'ati wa jahli",
+      "meaning": "My Lord, forgive my mistakes and ignorance.",
+      "reference": "Sahih Muslim 2719"
+    },
+    {
+      "name": "Dua for Success",
+      "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً",
+      "transliteration": "Rabbana atina fid-dunya hasanah wa fil-akhirati hasanah",
+      "meaning": "Our Lord, give us good in this world and good in the Hereafter.",
+      "reference": "Surah Al-Baqarah 2:201"
+    },
+    {
+      "name": "Dua for Strength in Faith",
+      "arabic": "رَبِّ زِدْنِي إِيمَانًا",
+      "transliteration": "Rabbi zidni eemanan",
+      "meaning": "My Lord, increase me in faith.",
+      "reference": "Derived from general Qur'anic principles"
+    },
+    {
+      "name": "Dua for Mercy",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ رَحْمَتَكَ",
+      "transliteration": "Allahumma inni asaluka rahmatak",
+      "meaning": "O Allah, I ask You for Your mercy.",
+      "reference": "Sahih Muslim 2697"
+    },
+    {
+      "name": "Dua for Protection from Satan",
+      "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+      "transliteration": "A'udhu billahi min ash-shaytan ir-rajim",
+      "meaning": "I seek refuge in Allah from the accursed Satan.",
+      "reference": "Surah An-Nahl 16:98"
+    },
+    {
+      "name": "Dua for Protection from Evil",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ",
+      "transliteration": "Allahumma inni a'udhu bika min sharri ma sanat",
+      "meaning": "O Allah, I seek refuge in You from the evil of what I have done.",
+      "reference": "Sahih Muslim 2716"
+    },
+    {
+      "name": "Dua for Anxiety",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ",
+      "transliteration": "Allahumma inni a'udhu bika minal hammi wal-hazan",
+      "meaning": "O Allah, I seek refuge in You from anxiety and sorrow.",
+      "reference": "Sahih Bukhari 6369"
+    },
+    {
+      "name": "Dua for Light",
+      "arabic": "اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا",
+      "transliteration": "Allahumma ij'al fi qalbi nooran",
+      "meaning": "O Allah, place light in my heart.",
+      "reference": "Sahih Muslim 763"
+    },
+    {
+      "name": "Dua for Strengthening Iman",
+      "arabic": "رَبِّ زِدْنِي إِيمَانًا وَيَقِينًا",
+      "transliteration": "Rabbi zidni eemanan wa yaqeenan",
+      "meaning": "My Lord, increase me in faith and conviction.",
+      "reference": "Derived from general Qur'anic principles"
+    },
+    {
+      "name": "Dua for Sustenance",
+      "arabic": "اللَّهُمَّ ارْزُقْنِي رِزْقًا حَلَالًا طَيِّبًا",
+      "transliteration": "Allahumma arzuqni rizqan halalan tayyiban",
+      "meaning": "O Allah, grant me lawful and good sustenance.",
+      "reference": "Sunan Ibn Majah 925"
+    },
+    {
+      "name": "Dua for Contentment",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الرِّضَا بَعْدَ الْقَضَاءِ",
+      "transliteration": "Allahumma inni asaluka ar-rida ba’dal qada’",
+      "meaning": "O Allah, I ask You for contentment after the decree.",
+      "reference": "Sunan At-Tirmidhi 3497"
+    },
+    {
+      "name": "Dua for Protection from Illness",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْبَرَصِ وَالْجُنُونِ وَالْجُذَامِ",
+      "transliteration": "Allahumma inni a'udhu bika minal barasi wal junooni wal juthami",
+      "meaning": "O Allah, I seek refuge in You from leprosy, madness, and serious illness.",
+      "reference": "Sunan Abu Dawood 1554"
+    },
+    {
+      "name": "Dua for Shifa (Healing)",
+      "arabic": "اللَّهُمَّ اشْفِنِي شِفَاءً لَا يُغَادِرُ سَقَمًا",
+      "transliteration": "Allahumma ishfini shifaan la yughadiru saqaman",
+      "meaning": "O Allah, heal me with a healing that leaves no illness.",
+      "reference": "Sunan At-Tirmidhi 2066"
+    },
+    {
+      "name": "Dua for Protection Against Enemies",
+      "arabic": "اللَّهُمَّ أَكْفِنِيهِمْ بِمَا شِئْتَ",
+      "transliteration": "Allahumma akfinihim bima shi't",
+      "meaning": "O Allah, suffice me against them as You will.",
+      "reference": "Sunan Ibn Majah 3849"
+    },
+    {
+      "name": "Dua for Mercy Upon the Deceased",
+      "arabic": "اللَّهُمَّ اغْفِرْ لَهُمْ وَارْحَمْهُمْ",
+      "transliteration": "Allahumma ighfir lahum warhamhum",
+      "meaning": "O Allah, forgive them and have mercy on them.",
+      "reference": "Sahih Muslim 956"
+    },
+    {
+      "name": "Dua for Help in Hardships",
+      "arabic": "اللَّهُمَّ أَحْسِنْ عَاقِبَتَنَا فِي الْأُمُورِ كُلِّهَا",
+      "transliteration": "Allahumma ahsin 'aqibatana fi al-umur kullaha",
+      "meaning": "O Allah, make the end of our affairs good.",
+      "reference": "Sunan Ibn Majah 3842"
+    },
+    {
+      "name": "Dua for the Sick",
+      "arabic": "اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَاسَ",
+      "transliteration": "Allahumma rabban-nas, adhhib al-ba's",
+      "meaning": "O Allah, Lord of mankind, remove the affliction.",
+      "reference": "Sahih Bukhari 5746"
+    },
+    {
+      "name": "Dua for Relief from Distress",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ كُلِّ خَيْرٍ",
+      "transliteration": "Allahumma inni asaluka min kulli khayrin",
+      "meaning": "O Allah, I ask You for all that is good.",
+      "reference": "Sunan Abu Dawood 1480"
+    },
+    {
+      "name": "Dua for Guidance in Decision Making",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْتَشِيرُكَ فِي شَأْنِي",
+      "transliteration": "Allahumma inni astashiruka fi sha'ni",
+      "meaning": "O Allah, I consult You in my affairs.",
+      "reference": "Sunan Abu Dawood 3417"
+    },
+    {
+      "name": "Dua for Entering a Home",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الدُّخُولِ",
+      "transliteration": "Allahumma inni asaluka khayra ad-dukhul",
+      "meaning": "O Allah, I ask You for the best of entrances.",
+      "reference": "Sunan Ibn Majah 1743"
+    },
+    {
+      "name": "Dua for Family",
+      "arabic": "اللَّهُمَّ اجْمَعْنَا فِي جَنَّاتِ النَّعِيمِ",
+      "transliteration": "Allahumma ajma'na fi jannati an-na'im",
+      "meaning": "O Allah, unite us in the Gardens of Bliss.",
+      "reference": "Sahih Bukhari 258"
+    },
+    {
+      "name": "Dua for Fear of Allah",
+      "arabic": "اللَّهُمَّ اجْعَلْ خَشْيَتَكَ فِي قَلْبِي",
+      "transliteration": "Allahumma aj'al khashyataka fi qalbi",
+      "meaning": "O Allah, place Your fear in my heart.",
+      "reference": "Sunan Ibn Majah 4247"
+    },
+    {
+      "name": "Dua for Daily Needs",
+      "arabic": "اللَّهُمَّ اكْفِنِي حَاجَتِي",
+      "transliteration": "Allahumma ikfini hajati",
+      "meaning": "O Allah, suffice me in my needs.",
+      "reference": "Sunan Abi Dawood 1483"
+    },
+    {
+      "name": "Dua for Blessings in Livelihood",
+      "arabic": "اللَّهُمَّ بَارِكْ لِي فِي رِزْقِي",
+      "transliteration": "Allahumma barik li fi rizqi",
+      "meaning": "O Allah, bless me in my provision.",
+      "reference": "Sunan Abi Dawood 1490"
+    },
+    {
+      "name": "Dua for Happiness",
+      "arabic": "اللَّهُمَّ أَنْتَ الْفَرَحُ",
+      "transliteration": "Allahumma anta al-farahu",
+      "meaning": "O Allah, You are happiness.",
+      "reference": "Derived from general Qur'anic principles"
+    },
+    {
+      "name": "Dua for Protection Against Poverty",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْفَقْرِ",
+      "transliteration": "Allahumma inni a'udhu bika min al-faqr",
+      "meaning": "O Allah, I seek refuge in You from poverty.",
+      "reference": "Sunan Ibn Majah 4290"
+    },
+    {
+      "name": "Dua for Trust in Allah",
+      "arabic": "حَسْبِيَ اللَّهُ عَلَيْهِ تَوَكَّلتُ",
+      "transliteration": "Hasbiyallahu 'alayhi tawakkaltu",
+      "meaning": "Allah is sufficient for me; in Him, I place my trust.",
+      "reference": "Surah Al-Imran 3:173"
+    },
+    {
+      "name": "Dua for a Good End",
+      "arabic": "اللَّهُمَّ اجْعَلْ عَاقِبَتِي خَيْرًا",
+      "transliteration": "Allahumma aj'al 'aqibati khayran",
+      "meaning": "O Allah, make my end good.",
+      "reference": "Sunan Ibn Majah 2245"
+    },
+    {
+      "name": "Dua for Blessings in Knowledge",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا",
+      "transliteration": "Allahumma inni asaluka 'ilman nafian",
+      "meaning": "O Allah, I ask You for beneficial knowledge.",
+      "reference": "Sunan Ibn Majah 2242"
+    },
+    {
+      "name": "Dua for Being Grateful",
+      "arabic": "اللَّهُمَّ اجْعَلْنِي مِنَ الشَّاكِرِينَ",
+      "transliteration": "Allahumma aj'alni min ash-shakirin",
+      "meaning": "O Allah, make me among the grateful.",
+      "reference": "Sahih Muslim 1982"
+    },
+    {
+      "name": "Dua for Wealth",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ غِنًى يُغْنِينِي",
+      "transliteration": "Allahumma inni asaluka ghinan yughniyni",
+      "meaning": "O Allah, I ask You for wealth that suffices me.",
+      "reference": "Sunan Ibn Majah 2246"
+    },
+    {
+      "name": "Dua for Reuniting with Loved Ones",
+      "arabic": "اللَّهُمَّ اجْمَعْنِي بِأَهْلِي وَأَحِبَّتِي",
+      "transliteration": "Allahumma ajma'ni bi ahli wa ahibbati",
+      "meaning": "O Allah, unite me with my family and loved ones.",
+      "reference": "Derived from general Qur'anic principles"
+    },
+    {
+      "name": "Dua for Light in Life",
+      "arabic": "اللَّهُمَّ اجْعَلْ لِي نُورًا فِي قَلْبِي",
+      "transliteration": "Allahumma aj'al li nooran fi qalbi",
+      "meaning": "O Allah, grant me light in my heart.",
+      "reference": "Derived from general Qur'anic principles"
+    },
+    {
+      "name": "Dua for Success in Endeavors",
+      "arabic": "اللَّهُمَّ أَفْتَحْ عَلَيَّ أَبْوَابَ رَحْمَتِكَ",
+      "transliteration": "Allahumma aftah 'alayya abwaba rahmatika",
+      "meaning": "O Allah, open for me the doors of Your mercy.",
+      "reference": "Sunan Abu Dawood 1572"
+    },
+    {
+      "name": "Dua for Clarity of Mind",
+      "arabic": "اللَّهُمَّ أَفِقْنِي لِلْخَيْرِ",
+      "transliteration": "Allahumma afiqni lil-khayr",
+      "meaning": "O Allah, inspire me towards good.",
+      "reference": "Sunan Ibn Majah 2231"
+    },
+    {
+      "name": "Dua for Humility",
+      "arabic": "اللَّهُمَّ اجْعَلْنِي مِنَ الْمُتَوَاضِعِينَ",
+      "transliteration": "Allahumma aj'alni min al-mutawadi'in",
+      "meaning": "O Allah, make me among the humble.",
+      "reference": "Sahih Muslim 2568"
+    }
+  ],
+  "software_update_url": {
+    "isActive": true,
+    "info": "New Update Available!",
+    "url": ""
+  },
+  "notice": "Soon we'll publish new relese!",
+  "media": [
+    {
+      "id": 0,
+      "category": "tv",
+      "title": "Peace TV",
+      "image": "",
+      "url": "http://82.114.67.178:8081/hls/PeaceTV.m3"
+    },
+    {
+      "id": 1,
+      "category": "tv",
+      "title": "Peace TV English",
+      "image": "",
+      "url": "https://dzkyvlfyge.erbvr.com/PeaceTvEnglish/index.m3u8"
+    },
+    {
+      "id": 2,
+      "category": "tv",
+      "title": "Peace TV Bangla",
+      "image": "",
+      "url": "https://dzkyvlfyge.erbvr.com/PeaceTvBangla/index.m3u8"
+    },
+    {
+      "id": 3,
+      "category": "tv",
+      "title": "Peace TV Urdu",
+      "image": "",
+      "url": "https://dzkyvlfyge.erbvr.com/PeaceTvUrdu/index.m3u8"
+    },
+    {
+      "id": 4,
+      "category": "web",
+      "title": "Live Makkah",
+      "image": "",
+      "url": "https://www.youtube.com/embed/8H7JaTorYsw?si=xmhcgbnVIGY4mDTt"
+    }
+  ],
+  "our_post": [
+    {
+      "id": 0,
+      "title": "Eid Mubarak!",
+      "description": "May Allah bless you and your family with peace and happiness on this joyous occasion."
+    },
+    {
+      "id": 1,
+      "title": "Jumu'ah Reminder",
+      "description": "Don’t forget to recite Surah Al-Kahf and send blessings upon the Prophet (PBUH).",
+      "image": "https://static.wixstatic.com/media/7dc500_f78334e240334a05a33f5300a0e36b68~mv2.jpg/v1/fill/w_568,h_510,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/7dc500_f78334e240334a05a33f5300a0e36b68~mv2.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Importance of Charity",
+      "description": "“The believer’s shade on the Day of Resurrection will be their charity.” - Prophet Muhammad (PBUH)"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ytimg.com/vi/tpJjVCGyFQI/sddefault.jpg?v=66a31a31"
+    }
+  ]
+}

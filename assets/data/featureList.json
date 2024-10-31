@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "name": "Prayer Timer",
+      "icon": "alarm-outline",
+      "url": "/prayer_timer"
+    },
+    {
+      "id": 1,
+      "name": "Al Quran",
+      "icon": "book-open",
+      "url": "(QuranStack)/al_quran"
+    },
+    {
+      "id": 2,
+      "name": "Prayer Learning",
+      "icon": "pray",
+      "url": "/prayer_learning"
+    },
+    {
+      "id": 4,
+      "name": "Compass",
+      "icon": "compass",
+      "url": "/compass"
+    },
+    {
+      "id": 5,
+      "name": "Media",
+      "icon": "tv",
+      "url": "(media)/media"
+    },
+    {
+      "id": 6,
+      "name": "Tasbih Counter",
+      "icon": "spinner",
+      "url": "/(tasbih)/tasbih_home"
+    },
+    {
+      "id": 7,
+      "name": "Nearby Mosque",
+      "icon": "mosque",
+      "url": "/nearby_mosque"
+    },
+    {
+      "id": 7,
+      "name": "Halal Restaurant",
+      "icon": "fast-food",
+      "url": "/halal_restaurant"
+    },
+    {
+      "id": 8,
+      "name": "Dua",
+      "icon": "praying-hands",
+      "url": "/dua"
+    }
+  ]
+}
