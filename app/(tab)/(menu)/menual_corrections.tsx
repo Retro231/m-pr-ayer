@@ -59,14 +59,7 @@ const MenualCorrections = (props: Props) => {
     Maghrib: 0,
     Isha: 0,
   });
-  const {
-    location,
-    defaultLocation,
-    is24HourFormat,
-    prayerTimeConventions,
-    menualCorrections,
-    juristicMethod,
-  } = useSelector((state: RootState) => state.app);
+  const { menualCorrections } = useSelector((state: RootState) => state.app);
   const [modalVisible, setModalVisible] = useState(false);
   const dispatch = useDispatch();
 

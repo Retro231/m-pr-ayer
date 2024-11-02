@@ -1,6 +1,7 @@
 import {
   BackHandler,
   FlatList,
+  Linking,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -54,6 +55,37 @@ type Props = {};
 
 const Menu = (props: Props) => {
   const navigate = useNavigation<any>();
+
+  const redirectToGmail = (receiverEmail: string) => {
+    const gmailURL = `mailto:${receiverEmail}`;
+
+    Linking.canOpenURL(gmailURL)
+      .then((supported) => {
+        if (supported) {
+          Linking.openURL(gmailURL);
+        } else {
+          // Fallback to web URL
+          Linking.openURL(
+            `https://mail.google.com/mail/?view=cm&fs=1&to=${receiverEmail}`
+          );
+        }
+      })
+      .catch((err) => console.error("An error occurred", err));
+  };
+
+  const handleRateUs = (RateUsUrl: string) => {
+    Linking.canOpenURL(RateUsUrl)
+      .then((supported) => {
+        if (supported) {
+          Linking.openURL(RateUsUrl);
+        } else {
+          // Fallback to web URL
+          Linking.openURL(RateUsUrl);
+        }
+      })
+      .catch((err) => console.error("An error occurred", err));
+  };
+
   const handlePress = (title: string) => {
     switch (title) {
       case "Settings":
@@ -62,6 +94,19 @@ const Menu = (props: Props) => {
 
       case "Privacy Policy":
         router.navigate("/privacyPolicy");
+        break;
+      case "Rate Us":
+        handleRateUs(
+          "https://play.google.com/store/apps/details?id=com.muslimsprayer.app"
+        );
+        break;
+      case "Other's app":
+        handleRateUs(
+          "https://play.google.com/store/apps/details?id=com.muslimsprayer.app"
+        );
+        break;
+      case "Contact Us":
+        redirectToGmail("sheakhappstudio@gmail.com");
         break;
       case "Exit":
         BackHandler.exitApp();

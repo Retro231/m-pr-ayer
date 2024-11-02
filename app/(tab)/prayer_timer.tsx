@@ -48,6 +48,7 @@ const PrayerTimerScreen = () => {
               alignItems: "flex-start",
               gap: 1,
               marginLeft: 1,
+              marginBottom: -3,
             }}
             title={"Next"}
             info={prayerInfo?.upcomingPrayer.name ?? ""}
@@ -103,5 +104,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
+    alignItems: "flex-end",
   },
 });

@@ -10,6 +10,7 @@ import InternetInfo from "./InternetInfo";
 import PushNotification from "react-native-push-notification";
 import { Platform, StatusBar } from "react-native";
 import SplashLoading from "@/components/SplashLoading";
+import { OneSignal } from "react-native-onesignal";
 
 export default function RootLayout() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -61,6 +62,12 @@ export default function RootLayout() {
       // console.log("Connection type", state.type);
       // console.log("Is connected?", state.isConnected);
       // console.log(state.isConnected);
+      // OneSignal Initialization
+      OneSignal.initialize("233c5616-037d-419c-97e6-deeec2cd1bb4");
+
+      // requestPermission will show the native iOS or Android notification permission prompt.
+      // We recommend removing the following code and instead using an In-App Message to prompt for notification permission
+      OneSignal.Notifications.requestPermission(true);
 
       setNetOk(state.isConnected);
       setAppIsReady(true);

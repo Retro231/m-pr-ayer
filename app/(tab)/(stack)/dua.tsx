@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "@/components/header/Header";
 import SectionTitle from "@/components/SectionTitle";
@@ -14,6 +14,7 @@ import { Colors } from "@/constants/Colors";
 import getCustomData from "@/scripts/getCustomData";
 import * as Clipboard from "expo-clipboard";
 import Snackbar from "react-native-snackbar";
+import { useFocusEffect } from "expo-router";
 
 type Props = {
   name: string;
@@ -87,12 +88,15 @@ const DuaItem = ({ item, index }: ListRenderItemInfo<Props>) => {
 const Dua = (props: Props) => {
   const [data, setData] = useState<any>(null);
 
-  useEffect(() => {
-    (async () => {
-      const { dua_list } = await getCustomData();
-      setData(dua_list);
-    })();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        const { dua_list } = await getCustomData();
+        setData(dua_list);
+      })();
+    }, [])
+  );
+
   return (
     <SafeAreaView
       style={{

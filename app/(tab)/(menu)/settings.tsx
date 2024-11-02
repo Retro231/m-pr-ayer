@@ -28,6 +28,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import getCurrentLocation from "@/scripts/getCurrentLocation";
 import { router } from "expo-router";
 import getPrayerTimeConventions from "@/scripts/getPrayerTimeConventions";
+import usePrayerInfo from "@/hooks/usePrayerInfo";
+import { handleNotificationOnChanges } from "@/scripts/prayerNotification";
+import { OneSignal } from "react-native-onesignal";
 
 const juristicMethodList = [
   {
@@ -54,12 +57,26 @@ const Settings = () => {
   const dispatch = useDispatch();
   const [locationModalVisible, setLocationModalVisible] = useState(false);
   const [isPushNotificationEnabled, setIsPushNotificationEnabled] =
-    useState(false);
+    useState(true);
   const [prayerTimeConventionList, setPrayerTimeConventionsList] =
     useState<any>(null);
   const [juristicMethodName, setJuristicMethodName] = useState<any>(null);
-
   const [prayerTimeConventionName, setPrayerTimeConventionsName] = useState("");
+  const [prayerInfo, loading, fetchData]: any = usePrayerInfo();
+
+  useEffect(() => {
+    prayerInfo?.timing.forEach((element: any, index: any) => {
+      // time, name, location, index
+      handleNotificationOnChanges(element.time, element.name, location, index);
+    });
+
+    console.log("onchange", prayerInfo?.timing);
+  }, [
+    is24HourFormat,
+    prayerTimeConventions,
+    menualCorrections,
+    juristicMethod,
+  ]);
 
   useEffect(() => {
     (async () => {
@@ -143,6 +160,11 @@ const Settings = () => {
 
   const togglePushNotificationSwitch = async () => {
     setIsPushNotificationEnabled(!isPushNotificationEnabled);
+    if (!isPushNotificationEnabled) {
+      OneSignal.User.pushSubscription.optIn();
+    } else {
+      OneSignal.User.pushSubscription.optOut();
+    }
   };
 
   const handleChangeLocation = () => {

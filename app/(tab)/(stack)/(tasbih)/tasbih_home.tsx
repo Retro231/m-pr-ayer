@@ -8,12 +8,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "@/components/header/Header";
 import { Button } from "react-native";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import {
   deleteTasbih,
@@ -22,6 +22,8 @@ import {
   insertTasbih,
 } from "@/scripts/tasbihDB";
 import { useSQLiteContext } from "expo-sqlite";
+import getCustomData from "@/scripts/getCustomData";
+import Loading from "@/components/Loading";
 interface tasbihListItemType {
   id?: number;
   name: string;
@@ -93,10 +95,9 @@ const TasbihListItem = ({
   );
 };
 
-const customApi = require("@/assets/data/customApi.json");
-
 const TasbihCounter = () => {
   const [myTasbihList, setMyTasbihList] = useState<any>([]);
+  const [dhikr_list, setDhikr_list] = useState<any>([]);
   const [tasbihName, setTasbihName] = useState("");
   const [tasbihLength, setTasbihLength] = useState<string>("");
   const [activeList, setActiveList] = useState("populer"); // Manage active list state
@@ -107,6 +108,17 @@ const TasbihCounter = () => {
   useEffect(() => {
     getDBinfo();
   }, [activeList]);
+
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        setLoading(true);
+        const { dhikr_list } = await getCustomData();
+        setDhikr_list(dhikr_list);
+        setLoading(false);
+      })();
+    }, [])
+  );
 
   const getDBinfo = async () => {
     db.withTransactionAsync(async () => {
@@ -135,8 +147,6 @@ const TasbihCounter = () => {
   };
 
   const handleDeleteTasbih = async (id: number) => {
-    console.log(typeof id);
-
     deleteTasbih(id);
     const updatedTasbihList = myTasbihList.filter(
       (item: any) => item.id !== id
@@ -318,20 +328,24 @@ const TasbihCounter = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <FlatList
-        style={{
-          flex: 1,
-        }}
-        data={activeList === "populer" ? customApi.dhikr_list : myTasbihList}
-        renderItem={({ item }) => (
-          <TasbihListItem
-            data={item}
-            populer={activeList === "populer" ? true : false}
-            deleteTasbih={handleDeleteTasbih}
-          />
-        )}
-        keyExtractor={(item, index) => `${index}`}
-      />
+      {!loading ? (
+        <FlatList
+          style={{
+            flex: 1,
+          }}
+          data={activeList === "populer" ? dhikr_list : myTasbihList}
+          renderItem={({ item }) => (
+            <TasbihListItem
+              data={item}
+              populer={activeList === "populer" ? true : false}
+              deleteTasbih={handleDeleteTasbih}
+            />
+          )}
+          keyExtractor={(item, index) => `${index}`}
+        />
+      ) : (
+        <Loading />
+      )}
     </SafeAreaView>
   );
 };

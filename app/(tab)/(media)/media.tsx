@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Link } from "expo-router";
+import { Link, useFocusEffect } from "expo-router";
 import Header from "@/components/header/Header";
 import MediaNavButton from "@/components/Features/Media/MediaNavButton";
 import getCustomData from "@/scripts/getCustomData";
@@ -23,12 +23,14 @@ type mediaItemType = {
 const Media = () => {
   const [data, setData] = useState<[] | null>(null);
 
-  useEffect(() => {
-    (async () => {
-      const { media } = await getCustomData();
-      setData(media);
-    })();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        const { media } = await getCustomData();
+        setData(media);
+      })();
+    }, [])
+  );
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

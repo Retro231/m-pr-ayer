@@ -98,10 +98,10 @@ const storage = (props: Props) => {
       // Loop through each item in the cache directory and delete it
       for (const item of items) {
         const itemUri = `${cacheDirectoryUri}${item}`;
-        console.log(itemUri);
+        // console.log(itemUri);
 
         await FileSystem.deleteAsync(itemUri, { idempotent: true });
-        console.log(`Deleted: ${itemUri}`);
+        // console.log(`Deleted: ${itemUri}`);
       }
     } catch (error) {
       console.error(

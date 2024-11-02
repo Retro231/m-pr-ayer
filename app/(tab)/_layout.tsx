@@ -13,12 +13,11 @@ import {
   setPrayerTimeConventions,
 } from "@/rtk/slices/appSlice";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as useFonts from "expo-font";
-import Loading from "@/components/Loading";
 import SplashLoading from "@/components/SplashLoading";
 
 export default function TabLayout() {
   const [appIsReady, setAppIsReady] = useState(false);
+
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
@@ -37,7 +36,6 @@ export default function TabLayout() {
       // location
       if (prevStoredLocation === null) {
         const location = await getCurrentLocation();
-        console.log(location);
 
         dispatch(
           setDefalutLocation(

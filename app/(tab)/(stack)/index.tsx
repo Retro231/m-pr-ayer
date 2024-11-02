@@ -26,12 +26,16 @@ import { useSelector } from "react-redux";
 import OurPost from "@/components/Features/OurPost/OurPost";
 import { Ionicons } from "@expo/vector-icons";
 import usePrayerInfo from "@/hooks/usePrayerInfo";
+import { useFocusEffect } from "expo-router";
+import { handleNotificationOnChanges } from "@/scripts/prayerNotification";
 
 export default function HomeScreen() {
   const [features, setFeatures] = useState<any[]>([]);
   const [dayNight, setDayNight] = useState("Day");
   const [prayerInfo, loading, fetchData]: any = usePrayerInfo();
-  const { is24HourFormat } = useSelector((state: RootState) => state.app);
+  const { is24HourFormat, location } = useSelector(
+    (state: RootState) => state.app
+  );
   const [ourPosts, setOurPosts] = useState<[] | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [updateMsg, setUpdateMsg] = useState<{
@@ -72,21 +76,26 @@ export default function HomeScreen() {
   });
 
   useEffect(() => {
-    getCustomData();
-    const features = require("@/assets/data/featureList.json");
-    // console.log(features);
-    const data = padData([...features.data], 3);
-    setFeatures(data);
-  }, []);
+    prayerInfo?.timing.forEach((element: any, index: any) => {
+      // time, name, location, index
+      // console.log(element);
 
-  useEffect(() => {
-    (async () => {
-      const { our_post, software_update_url, notice } = await getCustomData();
-      setOurPosts(our_post);
-      setUpdateMsg(software_update_url);
-      setNotice(notice);
-    })();
-  }, []);
+      handleNotificationOnChanges(element.time, element.name, location, index);
+    });
+  }, [loading]);
+
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        const { our_post, software_update_url, notice } = await getCustomData();
+        // console.log(software_update_url);
+
+        setOurPosts(our_post);
+        setUpdateMsg(software_update_url);
+        setNotice(notice);
+      })();
+    }, [])
+  );
 
   // useEffect(() => {
   //   const url = "https://api.quran.com/api/v4/chapters";
@@ -149,23 +158,20 @@ export default function HomeScreen() {
             >
               <Text
                 style={{
-                  fontFamily: "MontserratSemiBold",
                   fontWeight: "semibold",
                   fontSize: 24,
                   color: Colors.text2,
                 }}
               >
-                Today, 7 July
+                {prayerInfo?.date ?? ""}
               </Text>
               <Text
                 style={{
-                  fontFamily: "MontserratMedium",
-                  fontWeight: "medium",
                   fontSize: 14,
                   color: Colors.text2,
                 }}
               >
-                1 Muharram 1446
+                {prayerInfo?.hijri ?? ""}
               </Text>
             </View>
             <MyLocation />

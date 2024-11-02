@@ -228,7 +228,7 @@ const AlQuranScreen: React.FC = () => {
     };
 
     const handleBookmarkPress = async () => {
-      console.log(item.id);
+      // console.log(item.id);
 
       await toggleBookmark(item.id);
       if (item.isBookmarked !== 1) {

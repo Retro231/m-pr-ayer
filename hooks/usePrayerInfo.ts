@@ -38,7 +38,8 @@ const usePrayerInfo = () => {
 
   // Function to convert time to 24-hour format and apply manual correction
   const applyCorrection = (time: string, correction: number): string => {
-    console.log(correction);
+    // console.log("correction", correction);
+    // work on it..............................
 
     const [hours, minutes] = time.split(":").map(Number);
     let totalMinutes = hours * 60 + minutes + correction;

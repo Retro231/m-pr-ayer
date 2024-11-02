@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface AppStateProps {
+  pushNotification: boolean;
   location: string | null;
   defaultLocation: string | null;
   is24HourFormat: boolean;
@@ -11,6 +12,7 @@ export interface AppStateProps {
 }
 
 const initialState: AppStateProps = {
+  pushNotification: true,
   location: null,
   defaultLocation: null,
   is24HourFormat: false,
@@ -29,6 +31,9 @@ export const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
+    setPushNotificaton: (state, action: PayloadAction<boolean>) => {
+      state.pushNotification = action.payload;
+    },
     setLocation: (state, action: PayloadAction<string>) => {
       state.location = action.payload;
     },
@@ -52,6 +57,7 @@ export const appSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
+  setPushNotificaton,
   setLocation,
   setDefalutLocation,
   setIs24HourFormat,

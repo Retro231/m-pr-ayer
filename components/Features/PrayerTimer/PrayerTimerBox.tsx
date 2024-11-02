@@ -1,14 +1,17 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import usePrayerInfo from "@/hooks/usePrayerInfo";
 import { RootState } from "@/rtk/store";
-import { useSelector } from "react-redux";
-import PushNotification, { Importance } from "react-native-push-notification";
-import { useFocusEffect } from "expo-router";
-
+import { useDispatch, useSelector } from "react-redux";
+import {
+  cancleNotification,
+  createNotificationChannel,
+  setNotification,
+} from "@/scripts/prayerNotification";
+import ManualCorrectionModal from "../Settings/ManualCorrectionModal";
+import { setMenualCorrections } from "@/rtk/slices/appSlice";
 interface propsType {
   time: string;
   title: string;
@@ -31,122 +34,65 @@ const PrayerTimerBox: React.FC<propsType> = ({
   active,
 }: any) => {
   const [alarm, setAlarm] = useState(false);
-  const { location } = useSelector((state: RootState) => state.app);
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const { menualCorrections } = useSelector((state: RootState) => state.app);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [adujstedMinute, setAdujstedMinute] = useState({
+    Fajr: 0,
+    Dhuhr: 0,
+    Asr: 0,
+    Maghrib: 0,
+    Isha: 0,
+  });
+
+  const dispatch = useDispatch();
+
+  const closeModal = (minute: any | null) => {
+    setModalVisible(false);
+    // if (minute !== null) {
+    //   setAdujstedMinute((prev) => ({
+    //     ...prev,
+    //     [`${selectedItem}`]: minute,
+    //   }));
+    // }
+    if (minute !== null)
+      dispatch(
+        setMenualCorrections({ ...adujstedMinute, [`${selectedItem}`]: minute })
+      );
+
+    storeMenualCorrection({ ...adujstedMinute, [`${selectedItem}`]: minute });
+  };
+
+  const storeMenualCorrection = async (value: object) => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem("MenualCorrection", jsonValue);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const isChannelIdExist = async (): Promise<string | null> => {
     const channelId: string | null = await AsyncStorage.getItem(title);
     return channelId;
   };
 
-  const isAlermSet = async () => {
-    const id = await isChannelIdExist();
-    if (id !== null) {
-      setAlarm(true);
-    }
-  };
-
-  const cancleAll = async () => {
-    PushNotification.cancelAllLocalNotifications();
-    await AsyncStorage.clear();
-  };
-
   useEffect(() => {
-    // check if alerm is already set.
-    // get notification id (channel id)
-    PushNotification.createChannel(
-      {
-        channelId: title, // (required)
-        channelName: "prayer-channel", // (required)
-        channelDescription: "A channel for all prayer notification",
-        playSound: true,
-        soundName: "azan",
-        importance: Importance.HIGH,
-        vibrate: true,
-      },
-      (created: any) => {} // (optional) callback returns whether the channel was created, false means it already existed.
-    );
-    isAlermSet();
-  }, []);
-
-  const setNotification = async (time: string, title: string) => {
-    // Request permissions (required for iOS)
-    // PushNotification.requestPermissions();
-
-    // schedule notification
-    function scheduleNotification(id: number, title: string, time: string) {
-      // Parse the time string (assumes it can be in 12-hour or 24-hour format)
-      const is12HourFormat =
-        time.toLowerCase().includes("am") || time.toLowerCase().includes("pm");
-      let hours, minutes;
-
-      if (is12HourFormat) {
-        // If it's in 12-hour format (e.g., "7:30 AM")
-        const timeParts: any = time.match(/(\d+):(\d+)\s*(AM|PM)/i);
-        hours = parseInt(timeParts[1]);
-        minutes = parseInt(timeParts[2]);
-        const ampm = timeParts[3].toUpperCase();
-
-        if (ampm === "PM" && hours !== 12) {
-          hours += 12;
-        } else if (ampm === "AM" && hours === 12) {
-          hours = 0;
-        }
+    (async () => {
+      const id = await isChannelIdExist();
+      if (id !== null) {
+        setAlarm(true);
       } else {
-        // If it's in 24-hour format (e.g., "19:30")
-        [hours, minutes] = time.split(":").map(Number);
+        setAlarm(false);
       }
-
-      // Create a date object for today with the specified time
-      const now = new Date();
-      const notificationDate = new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate(),
-        hours,
-        minutes,
-        0
-      );
-
-      // If the time has already passed today, schedule it for tomorrow
-      if (notificationDate < now) {
-        notificationDate.setDate(notificationDate.getDate() + 1);
-      }
-
-      // Schedule the notification
-      PushNotification.localNotificationSchedule({
-        id: id,
-        channelId: title,
-        largeIcon: "ic_launcher", // (optional) default: "ic_launcher". Use "" for no large icon.
-        smallIcon: "ic_launcher",
-        title: `${title} At ${time}`, // (optional)
-        message: `⏰ Check daily for accurate prayer times in ${location}`, // (required)
-        date: notificationDate, // Schedule the notification at the parsed time
-        allowWhileIdle: true,
-        repeatTime: 1,
-        repeatType: "day", // Daily repeat
-        invokeApp: false,
-        color: Colors.darkSea,
-      });
-    }
-
-    scheduleNotification(id, title, time);
-
-    // save channel id to async storge
-    await AsyncStorage.setItem(title, `${id}`);
-  };
-
-  const cancleNotification = async () => {
-    // cancle notification by id
-    PushNotification.cancelLocalNotification(`${id}`);
-    // delete from async storage
-    await AsyncStorage.removeItem(title);
-  };
+    })();
+  }, []);
 
   const handleAlarm = async () => {
     if (!alarm) {
-      await setNotification(time, title);
+      await setNotification(id, time, title);
     } else {
-      await cancleNotification();
+      await cancleNotification(id, title);
     }
     setAlarm((prev: any) => !prev);
   };
@@ -170,18 +116,26 @@ const PrayerTimerBox: React.FC<propsType> = ({
           {active && <Ionicons name="caret-back-sharp" color={"#00ff37"} />}
         </Text>
       </View>
-      <Text
+      <TouchableOpacity
         style={[
-          styles.time,
           {
             width: "40%",
           },
         ]}
+        onPress={() => {
+          setModalVisible(true);
+          setSelectedItem(title);
+          if (menualCorrections !== null) {
+            setAdujstedMinute(menualCorrections);
+          }
+        }}
       >
-        {time}
-      </Text>
+        <Text style={[styles.time]}>{time}</Text>
+      </TouchableOpacity>
       <TouchableOpacity
-        onPress={handleAlarm}
+        onPress={() => {
+          handleAlarm();
+        }}
         style={{
           padding: 10,
           backgroundColor: "#fff",
@@ -195,6 +149,13 @@ const PrayerTimerBox: React.FC<propsType> = ({
           color={Colors.darkSea}
         />
       </TouchableOpacity>
+      {selectedItem && (
+        <ManualCorrectionModal
+          prevValue={60 + menualCorrections[selectedItem]}
+          visible={modalVisible}
+          onClose={closeModal}
+        />
+      )}
       {/* <Button title="Cancel all" onPress={cancleAll} /> */}
     </View>
   );
