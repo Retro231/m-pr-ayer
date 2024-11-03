@@ -1,6 +1,7 @@
 import {
   BackHandler,
   FlatList,
+  Image,
   Linking,
   StyleSheet,
   Text,
@@ -159,6 +160,38 @@ const Menu = (props: Props) => {
             </TouchableOpacity>
           );
         }}
+        ListFooterComponent={() => (
+          <View
+            style={{
+              alignItems: "center",
+              margin: 10,
+              gap: 3,
+            }}
+          >
+            <Text
+              style={{
+                color: Colors.darkSea,
+                fontWeight: 600,
+              }}
+            >
+              Made by Sheakh App Studio
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                gap: 5,
+              }}
+            >
+              <Text
+                style={{
+                  color: Colors.darkSea,
+                }}
+              >
+                ©{new Date().getFullYear()} Muslims Prayer. All rights reserved.
+              </Text>
+            </View>
+          </View>
+        )}
       />
     </SafeAreaView>
   );

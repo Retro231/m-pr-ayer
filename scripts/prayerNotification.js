@@ -100,13 +100,14 @@ const handleNotificationOnChanges = async (time, name, location, index) => {
   const channelId = await AsyncStorage.getItem(name);
   const prevPrayerTime = await AsyncStorage.getItem(`prev${name}time`);
   // console.log("prev", prevPrayerTime);
-  if (channelId !== null) {
-    if (prevPrayerTime === null || prevPrayerTime !== time) {
+  if (prevPrayerTime === null || prevPrayerTime !== time) {
+    console.log("hi");
+    if (channelId !== null) {
       cancleNotification(index, name);
-      createNotificationChannel(name);
-      setNotification(index, time, name, location);
-      await AsyncStorage.setItem(`prev${name}time`, time);
     }
+    createNotificationChannel(name);
+    setNotification(index, time, name, location);
+    await AsyncStorage.setItem(`prev${name}time`, time);
   }
 };
 export {
