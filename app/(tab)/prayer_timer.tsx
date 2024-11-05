@@ -49,6 +49,7 @@ const PrayerTimerScreen = () => {
               gap: 1,
               marginLeft: 1,
               marginBottom: -3,
+              width: "50%",
             }}
             title={"Next"}
             info={prayerInfo?.upcomingPrayer.name ?? ""}
@@ -57,6 +58,7 @@ const PrayerTimerScreen = () => {
           <HeroSmallDate
             style={{
               alignItems: "flex-end",
+              width: "50%",
             }}
             eng={prayerInfo?.date ?? ""}
             arabic={prayerInfo?.hijri ?? ""}

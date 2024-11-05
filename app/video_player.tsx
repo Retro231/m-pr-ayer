@@ -43,7 +43,7 @@ const Video_Player = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
+      <StatusBar hidden />
       <VideoPlayer
         onBack={() => handleOnBack()}
         source={{
@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#000",
-    marginTop: 20,
   },
 });
 

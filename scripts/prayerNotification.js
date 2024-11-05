@@ -101,7 +101,7 @@ const handleNotificationOnChanges = async (time, name, location, index) => {
   const prevPrayerTime = await AsyncStorage.getItem(`prev${name}time`);
   // console.log("prev", prevPrayerTime);
   if (prevPrayerTime === null || prevPrayerTime !== time) {
-    console.log("hi");
+    // console.log("hi");
     if (channelId !== null) {
       cancleNotification(index, name);
     }

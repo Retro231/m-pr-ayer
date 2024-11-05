@@ -41,7 +41,7 @@ const CompassScreen: React.FC = () => {
           <HeroSmallDate
             eng={prayerInfo?.date ?? "..."}
             arabic={prayerInfo?.hijri ?? "..."}
-            style={{ alignItems: "flex-end" }}
+            style={{ alignItems: "flex-end", width: "50%" }}
           />
         </View>
         <View

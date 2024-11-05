@@ -15,6 +15,9 @@ import {
   initializeDB as intializeTasbihDB,
 } from "@/scripts/tasbihDB";
 import loadDatabase from "@/scripts/loadDatabase";
+import { RootState } from "@/rtk/store";
+import { useDispatch, useSelector } from "react-redux";
+import { reset } from "@/rtk/slices/appSlice";
 
 type Props = {};
 
@@ -22,7 +25,7 @@ const storage = (props: Props) => {
   const [totalSize, setTotalSize] = useState<any>(null);
   const [cacheSize, setCacheSize] = useState<any>(null);
   const [userData, setUserData] = useState<any>(null);
-
+  const dispatch = useDispatch();
   // Format size to human-readable format (KB, MB, etc.)
   const formatSize = (bytes: number) => {
     if (bytes < 1024) return `${bytes} B`;
@@ -122,6 +125,8 @@ const storage = (props: Props) => {
       await intializeTasbihDB();
 
       AsyncStorage.clear();
+
+      dispatch(reset());
 
       // Step 2: Clear cacheDirectory
       await clearCacheDirectory(FileSystem.cacheDirectory);

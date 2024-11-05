@@ -52,6 +52,21 @@ export const appSlice = createSlice({
     setJuristicMethod: (state, action: PayloadAction<number>) => {
       state.juristicMethod = action.payload;
     },
+    reset: (state) => {
+      state.pushNotification = true;
+      state.location = null;
+      state.defaultLocation = null;
+      state.is24HourFormat = false;
+      state.prayerTimeConventions = 3;
+      state.menualCorrections = {
+        Fajr: 0,
+        Dhuhr: 0,
+        Asr: 0,
+        Maghrib: 0,
+        Isha: 0,
+      };
+      state.juristicMethod = 1;
+    },
   },
 });
 
@@ -64,6 +79,7 @@ export const {
   setPrayerTimeConventions,
   setMenualCorrections,
   setJuristicMethod,
+  reset,
 } = appSlice.actions;
 
 export default appSlice.reducer;

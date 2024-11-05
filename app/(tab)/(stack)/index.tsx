@@ -68,10 +68,7 @@ export default function HomeScreen() {
   useEffect(() => {
     const fajarTime = prayerInfo?.timing[0].time;
     const maghribTime = prayerInfo?.timing[3].time;
-    const dayOrNight = checkDayNight(
-      fajarTime ?? "06:00 AM",
-      maghribTime ?? "06:30 PM"
-    );
+    const dayOrNight = checkDayNight(fajarTime ?? "", maghribTime ?? "");
     setDayNight(dayOrNight);
   });
 
@@ -182,7 +179,9 @@ export default function HomeScreen() {
                 {prayerInfo?.hijri ?? ""}
               </Text>
             </View>
-            <MyLocation />
+            <View style={{ flex: 1, width: "80%", alignItems: "center" }}>
+              <MyLocation locationAlign={"center"} />
+            </View>
           </View>
           <View
             style={{

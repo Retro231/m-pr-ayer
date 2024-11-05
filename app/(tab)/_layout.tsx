@@ -11,6 +11,7 @@ import {
   setLocation,
   setMenualCorrections,
   setPrayerTimeConventions,
+  setPushNotificaton,
 } from "@/rtk/slices/appSlice";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import SplashLoading from "@/components/SplashLoading";
@@ -28,6 +29,7 @@ export default function TabLayout() {
       );
       const JuristicMethod = await AsyncStorage.getItem("JuristicMethod");
       const MenualCorrection = await AsyncStorage.getItem("MenualCorrection");
+      const pushNotification = await AsyncStorage.getItem("pushNotification");
 
       const timeFormet: {
         is24Hour: boolean;
@@ -95,6 +97,13 @@ export default function TabLayout() {
               }
         )
       );
+
+      // push notification
+
+      if (pushNotification !== null) {
+        if (pushNotification === "true") dispatch(setPushNotificaton(true));
+        else dispatch(setPushNotificaton(false));
+      }
 
       setAppIsReady(true);
     })();

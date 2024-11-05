@@ -23,6 +23,7 @@ import {
   setIs24HourFormat,
   setJuristicMethod,
   setLocation,
+  setPushNotificaton,
 } from "@/rtk/slices/appSlice";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import getCurrentLocation from "@/scripts/getCurrentLocation";
@@ -45,8 +46,8 @@ const juristicMethodList = [
 
 const Settings = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
-
   const {
+    pushNotification,
     location,
     defaultLocation,
     is24HourFormat,
@@ -69,8 +70,6 @@ const Settings = () => {
       // time, name, location, index
       handleNotificationOnChanges(element.time, element.name, location, index);
     });
-
-    console.log("onchange", prayerInfo?.timing);
   }, [
     is24HourFormat,
     prayerTimeConventions,
@@ -93,6 +92,10 @@ const Settings = () => {
       setJuristicMethodName(foundjuristicMethod?.label);
     })();
   }, []);
+
+  useEffect(() => {
+    setIsPushNotificationEnabled(pushNotification);
+  }, [pushNotification]);
 
   useEffect(() => {
     // prayer time conventions
@@ -160,10 +163,20 @@ const Settings = () => {
 
   const togglePushNotificationSwitch = async () => {
     setIsPushNotificationEnabled(!isPushNotificationEnabled);
+    dispatch(setPushNotificaton(!isPushNotificationEnabled));
     if (!isPushNotificationEnabled) {
       OneSignal.User.pushSubscription.optIn();
     } else {
       OneSignal.User.pushSubscription.optOut();
+    }
+    storePushNotification(!isPushNotificationEnabled);
+  };
+
+  const storePushNotification = async (value: boolean) => {
+    try {
+      await AsyncStorage.setItem("pushNotification", `${value}`);
+    } catch (e) {
+      console.log(e);
     }
   };
 
@@ -182,7 +195,6 @@ const Settings = () => {
   return (
     <SafeAreaView>
       <Header title={"Settings"} goBack />
-
       <View style={styles.container}>
         {/* Notification Toggle */}
         <View style={styles.settingRow}>
@@ -355,6 +367,7 @@ const Settings = () => {
                   onPress={(data) => {
                     // 'details' is provided when fetchDetails = true
                     setSelectedLocation(data.description);
+                    console.log(data.description);
                   }}
                   query={{
                     key: "",

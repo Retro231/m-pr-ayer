@@ -31,7 +31,7 @@ const HeroSmallDate: React.FC<propsType> = ({ eng, arabic, style }) => {
       >
         {arabic}
       </Text>
-      <MyLocation />
+      <MyLocation locationAlign={"right"} />
     </View>
   );
 };

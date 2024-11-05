@@ -7,6 +7,7 @@ interface propsType {
 const VirtualizedList: React.FC<propsType> = ({ children }) => {
   return (
     <FlatList
+      keyboardShouldPersistTaps={"handled"}
       data={[]}
       keyExtractor={() => "key"}
       renderItem={null}
